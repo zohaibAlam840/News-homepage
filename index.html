@@ -16,8 +16,9 @@
 </head>
 <body>
   <main>
-    <div class="logo"><object data="assets/images/logo.svg" type=""></object><object data="assets/images/icon-menu.svg" type="" class="nav-menu"></object></div>
-      <div class="nav">
+    <div class="logo"><object data="assets/images/logo.svg" type="" alt="menu svg"></object><div class="nav-menu"><img src="assets/images/icon-menu.svg" alt=""></div></div>
+      <div class="nav" id="nav">
+        <img src="assets/images/icon-menu-close.svg" alt="close svg" class="navClose">
         <li><a href="#">Home</a></li>
         <li><a href="#">New</a></li>
         <li><a href="#">Regular</a></li>
@@ -25,7 +26,7 @@
         <li><a href="#">Categories</a></li>
       </div>
     <div class="imag">
-      <img src="assets/images/image-web-3-desktop.jpg" alt="">
+      <img src="assets/images/image-web-3-desktop.jpg" alt="main image">
       <div class="detail">
         <h1>The Bright Future of Web 3.0?</h1>
         <div class="text">
@@ -51,7 +52,7 @@
     </div>
     <div class="cards">
       <div class="card1">
-        <img src="assets/images/image-retro-pcs.jpg" alt="PC">
+        <img src="assets/images/image-retro-pcs.jpg" alt="Retro PC">
         <div class="card-discription">
           <h3>01</h3>
           <h4>Reviviving Retro PCs</h4>
@@ -59,7 +60,7 @@
         </div>
       </div>
       <div class="card2">
-        <img src="assets/images/image-top-laptops.jpg" alt="PC">
+        <img src="assets/images/image-top-laptops.jpg" alt="laoptop keybord">
         <div class="card-discription">
           <h3>02</h3>
           <h4>Top 10 Laptops of 2022</h4>
@@ -67,7 +68,7 @@
         </div>
       </div>
       <div class="card3">
-        <img src="assets/images/image-gaming-growth.jpg" alt="PC">
+        <img src="assets/images/image-gaming-growth.jpg" alt="gaming">
         <div class="card-discription">
           <h3>03</h3>
           <h4>The Growth of Gaming</h4>
@@ -79,8 +80,17 @@
 </body>
 <script>
   let menu = document.querySelector(".nav-menu");
-  let nav = document.querySelector(".nav");
-  console.log(menu)
-  nav.setAttribute('display','block')
+  let nav = document.querySelector("#nav");
+  let close = document.querySelector(".navClose");
+  let main = document.getElementsByTagName('main');
+  menu.addEventListener('click',()=>{
+    nav.setAttribute('class','navhid')
+    close.style.opacity = 1;
+  })
+  close.addEventListener('click',()=>{
+    close.style.opacity = 0;
+    nav.setAttribute('class','nav')
+  })
+
 </script>
 </html>

@@ -22,6 +22,7 @@ a{
 body{
     height: 100vh;
     padding: 50px 50px 50px 200px;
+    opacity: 1;
 }
 main{
     display: grid;
@@ -40,6 +41,9 @@ main{
     position: relative;
     right: 6.5vw;
     font-size: 0.85rem;
+}
+.navClose{
+    opacity: 0;
 }
 .nav li{
     margin-right: 2.6vw;
@@ -132,6 +136,9 @@ main{
         height: 150%;
         min-height: 100%;
     }
+    .nav{
+        right: 20.5vw;;
+    }
     p{
         font-size: 0.6rem;
     }
@@ -164,6 +171,9 @@ main{
     }
     h3{
         font-size: 0.65rem;
+    }
+    .nav{
+        right: 35.5vw;;
     }
     .detail> div > p{
         font-size: 0.5rem;
@@ -224,8 +234,10 @@ main{
         top: 25px;
         right: 0px;
     }
-    .nav{
+    .navhid{
         grid-area: 1;
+        display: flex;
+        list-style: none;
         position: absolute;
         flex-direction: column;
         right: 0;
@@ -235,10 +247,9 @@ main{
         background-color: white;
         padding-left: 10px;
         padding-top: 100px;
-        display: none;
+        
     }
-    .nav::before{
-        content: "";
+    .navClose{
         position: absolute;
         width: 32px;
         height: 31px;
@@ -247,7 +258,7 @@ main{
         right: 10px;
         
     }
-    .nav li{
+    .navhid li{
         margin-top: 30px;
         font-size: 1.2rem;
         font-weight: 700;
